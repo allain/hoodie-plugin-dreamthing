@@ -10,7 +10,7 @@ The structure of a plugin
 
 A plugin can extend a Hoodie App at 3 places:
 
-1. Frontend API, e.g. `hoodie.dreamthing.do('something')`
+1. Frontend API, e.g. `hoodie.dreamthing.make('something')`
 2. A Worker, that can pick up background tasks, interacts with 3rd party apps, etc
 3. Pocket, extends the ADMIN ui with a custom view
 
