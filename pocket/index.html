@@ -1,0 +1,24 @@
+<!-- please ignore: this will soon be added automatically -->
+<link rel="stylesheet" href="http://localhost:9000/styles/main.css">
+<script src="http://localhost:9000/components/jquery/jquery.js"></script>
+<script src="http://localhost:9000/components/hoodie/hoodie.js"></script>
+<script src="http://localhost:9000/components/hoodie.admin/hoodie.admin.js"></script>
+<script>
+  hoodieAdmin = new HoodieAdmin()
+</script>
+<!-- /please ignore -->
+
+
+<!-- this will be shown in pocket as its own page called "dreamthing" -->
+<h1>Hoodie Dreams</h1>
+
+<ul id="dream-list"></ul>
+
+<script>
+  $list = $('#dream-list')
+  hoodieAdmin.task.findAll('dream').then( function(dreams) {
+    dreams.forEach(function(dream) {
+      $list.append("<li>"+dream.what+"</li>")
+    });
+  });
+</script>
