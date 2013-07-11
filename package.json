@@ -1,5 +1,6 @@
 {
   "name": "hoodie-worker-mydreamthing",
   "description": "Some funky description yo",
-  "dependencies": {}
+  "dependencies": {},
+  "version": "1.0.0"
 }
