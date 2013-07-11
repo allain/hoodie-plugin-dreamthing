@@ -2,6 +2,8 @@
 // on Hoodie Server startup.
 module.exports = function(hoodie, doneCallback) {
 
+  return // until @caolan gets all the API done
+  
   hoodie.task.on('dream:add', handleNewDream)
 
   function handleNewDream(database, dream) {
