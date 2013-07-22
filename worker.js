@@ -2,18 +2,20 @@
 // on Hoodie Server startup.
 module.exports = function(hoodie, doneCallback) {
 
-  return // until @caolan gets all the API done
-  
-  hoodie.task.on('dream:add', handleNewDream)
+  hoodie.task.on('change:dream', function (db, change) {
+    if (!change.doc.complete && !change.deleted) {
+      handleNewDream(db, change.doc);
+    }
+  })
 
-  function handleNewDream(database, dream) {
+  function handleNewDream(db, dream) {
     makeDreamComeTrue(dream, function(error, trueDream) {
       if (error) {
         dream.error = error;
-        return hoodie.task.update('dream', dream);
+        return hoodie.database(db).update('$dream', dream);
       }
 
-      hoodie.task.update('dream', trueDream, handleDreamUpdate);
+      hoodie.database(db).update('$dream', trueDream, handleDreamUpdate);
     })
   }
 
