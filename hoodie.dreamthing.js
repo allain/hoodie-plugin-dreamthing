@@ -3,7 +3,7 @@
 //     hoodie.dreamthing.add( 'something' )
 //     .then( handleDreamComeTrue, handleDreamError )
 // 
-Hoodie.extend('dreamthing', function(hoodie) {
+Hoodie.extend(function(hoodie) {
 
   // add new dream tasks and resolve when the worker made 
   // them come true or errored when trying it.
@@ -20,7 +20,5 @@ Hoodie.extend('dreamthing', function(hoodie) {
     return defer.promise()
   }
 
-  return {
-    make: make
-  }
+  hoodie.make = kame;
 });
