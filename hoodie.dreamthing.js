@@ -20,5 +20,5 @@ Hoodie.extend(function(hoodie) {
     return defer.promise()
   }
 
-  hoodie.make = kame;
+  hoodie.make = make;
 });
