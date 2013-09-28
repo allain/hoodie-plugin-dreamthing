@@ -20,5 +20,7 @@ Hoodie.extend(function(hoodie) {
     return defer.promise()
   }
 
-  hoodie.make = make;
+  hoodie.dreamthing = {
+    make: make
+  };
 });
